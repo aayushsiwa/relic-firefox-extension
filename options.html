@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Relic Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main class="shell">
+    <h1 class="title">Relic</h1>
+    <p class="subtitle">Connect an extension to your Relic archive.</p>
+
+    <section class="card">
+      <label class="field-label" for="server-url">Server URL</label>
+      <input type="url" id="server-url" class="input" placeholder="https://your-relic.example.com">
+      <p class="hint">The base URL of your Relic server.</p>
+
+      <label class="field-label" for="api-token">API token</label>
+      <div class="row">
+        <input type="password" id="api-token" class="input" placeholder="Paste your bearer token" autocomplete="off">
+        <button id="toggle-token" class="icon-btn" title="Show / hide token" aria-label="Toggle token visibility">
+          <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M1.5 8s2.5-4 6.5-4 6.5 4 6.5 4-2.5 4-6.5 4-6.5-4-6.5-4Z"/>
+            <circle cx="8" cy="8" r="1.6"/>
+          </svg>
+        </button>
+      </div>
+      <p class="hint">Find it under <code>Settings</code> on your Relic server.</p>
+
+      <label class="field-label" for="default-collection">Default collection</label>
+      <div class="row">
+        <select id="default-collection" class="input select"></select>
+        <button id="refresh-collections" class="icon-btn" title="Refresh collections" aria-label="Refresh collections">
+          <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9M13.5 1.5v3h-3"/>
+          </svg>
+        </button>
+      </div>
+      <p class="hint">Pre-selected in the popup when saving a page. Optional.</p>
+    </section>
+
+    <div class="footer">
+      <div class="smessages">
+        <div id="error" class="message error" role="alert"></div>
+        <div id="success" class="message success"></div>
+      </div>
+      <button id="save" class="btn btn-primary">Save Settings</button>
+    </div>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>
